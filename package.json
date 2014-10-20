@@ -1,0 +1,33 @@
+{
+  "name": "underscore-study",
+  "version": "1.0.0",
+  "description": "underscore-study ================",
+  "main": "karma.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caiohcoutinho/underscore-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caiohcoutinho/underscore-study/issues"
+  },
+  "homepage": "https://github.com/caiohcoutinho/underscore-study",
+  "devDependencies": {
+    "karma": "0.12.24",
+    "karma-chrome-launcher": "0.1.5",
+    "karma-coverage": "0.2.6",
+    "karma-jasmine": "0.1.5",
+    "karma-mocha-reporter": "^0.3.1",
+    "karma-phantomjs-launcher": "0.1.4",
+    "karma-requirejs": "0.2.2",
+    "karma-spec-reporter": "0.0.13",
+    "phantomjs": "1.9.11"
+  }
+}

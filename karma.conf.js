@@ -41,6 +41,13 @@ module.exports = function(config) {
     // web server port
     port: 9876,
 
+    // plugins
+    plugins: [
+        'karma-spec-reporter',
+        'karma-jasmine',
+        'karma-phantomjs-launcher'
+    ],
+
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
