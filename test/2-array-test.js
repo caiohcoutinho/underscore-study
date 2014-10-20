@@ -162,4 +162,86 @@ describe("array functions", function() {
   		});
   	});
 
+    describe("intersection", function(){
+      describe("set intersection of uniques in order of apresentation", function(){
+        it("dont work on sparse arrays", function(){
+          expect(_.intersection).toBeDefined();
+          var a = [];
+          a[0] = 0;
+          a[1] = 1;
+          a[3] = 3;
+          a[5] = 5;
+          var b = [];
+          b[0] = 0;
+          b[1] = 1;
+          b[3] = 3;
+          b[5] = 5;
+          expect(_.intersection(a,b)).toEqual([0,1,undefined,3,5]);
+        });
+        it("intersects arrays", function(){
+          expect(_.intersection).toBeDefined();
+          expect(_.intersection([0,1,2],[1,3],[1, 2,3])).toEqual([1])
+        });
+      });
+    });
+
+    describe("difference", function(){
+      describe("similar to without, but receives arrays instead of single values", function(){
+        it("dont work on sparse arrays", function(){
+          expect(_.difference).toBeDefined();
+          var a = [];
+          a[0] = 0;
+          a[1] = 1;
+          a[3] = 3;
+          a[5] = 5;
+          var b = [];
+          b[0] = 0;
+          b[1] = 1;
+          expect(_.difference(a,b)).toEqual([undefined, 3, undefined, 5]);
+        });
+        it("calculates set difference", function(){
+          expect(_.difference).toBeDefined();
+          expect(_.difference([0,1,2,3,4],[0,1],[3,4])).toEqual([2]);
+        });
+      });
+    });
+
+    describe("uniq", function(){
+      describe("create an array only with the uniques of the array", function(){
+        it("dont work on sparse arrays", function(){
+          expect(_.uniq).toBeDefined();
+          var a = [];
+          a[0] = 0;
+          a[1] = 1;
+          a[3] = 0;
+          a[4] = 1;
+          expect(_.uniq(a)).toEqual([0,1,undefined]);
+        });
+        it("uses === to test uniqueness", function(){
+          expect(_.uniq).toBeDefined();
+          expect(_.uniq([0,1,0,1,0,1])).toEqual([0,1]);
+        });
+        it("uses a default function to test uniqueness", function(){
+          expect(_.uniq).toBeDefined();
+          function criterion(number){
+            return number%2;
+          }
+          expect(_.uniq([0,1,2,3,4,5], false, criterion)).toEqual([0,1]);
+        });
+        it("can receive a flag that means the array is sorted", function(){
+          expect(_.uniq).toBeDefined();
+          expect(_.uniq([0,0,0,1,1,1], true)).toEqual([0,1]);
+        });
+        it("dont work on unsorted arrays if you pass the sorted flag", function(){
+          expect(_.uniq).toBeDefined();
+          expect(_.uniq([0,0,0,1,1,1,0], true)).toEqual([0,1,0]);
+        });
+      });
+    });
+
+    describe("zip", function(){
+      describe("create an array that merges information from multiple arrays by index", function(){
+        
+      })
+    });
 });

@@ -1,4 +1,4 @@
-describe("collectins functions", function() {
+describe("collections functions", function() {
 	describe("each", function() {
 	  it("iterates list", function() {
 	    expect(_.each).toBeDefined();
